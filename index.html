@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation Shadow Breach | Mini SIEM</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Operation Shadow Breach</h1>
+    <p>Mini SIEM Simulation + SOC Investigation Portfolio</p>
+</header>
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h2>SOC Controls</h2>
+
+        <button onclick="startMonitoring()">Start Monitoring</button>
+        <button onclick="stopMonitoring()">Stop Monitoring</button>
+        <button onclick="simulateAttack()">Simulate Attack</button>
+        <button onclick="generateReport()">Generate Report</button>
+
+        <br><br>
+
+        <h2>MITRE ATT&CK</h2>
+
+        <ul>
+            <li>T1566 - Phishing</li>
+            <li>T1110 - Brute Force</li>
+            <li>T1071 - C2 Communication</li>
+            <li>T1486 - Ransomware</li>
+            <li>T1041 - Exfiltration</li>
+        </ul>
+
+    </div>
+
+    <div class="main">
+
+        <div class="dashboard">
+
+            <div class="card">
+                <h3>Threat Score</h3>
+                <p id="threatScore">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Alerts</h3>
+                <p id="alertCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Suspicious IPs</h3>
+                <p id="ipCount">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Monitoring Status</h3>
+                <p id="monitorStatus" class="status">OFFLINE</p>
+            </div>
+
+        </div>
+
+        <div class="logs">
+
+            <h2>Live Threat Logs</h2>
+
+            <div class="log-container" id="logContainer"></div>
+
+            <div class="query-box">
+                <input type="text" id="queryInput" placeholder="search failed password OR ransomware">
+                <button onclick="runQuery()">Run Query</button>
+            </div>
+
+            <div class="query-result" id="queryResult">
+                Query results will appear here...
+            </div>
+
+        </div>
+
+        <div class="ticket-section">
+
+            <h2>Create Incident Ticket</h2>
+
+            <div class="ticket-form">
+
+                <input type="text" id="threatSource" placeholder="Threat Source">
+
+                <select id="severity">
+                    <option>HIGH</option>
+                    <option>CRITICAL</option>
+                </select>
+
+                <input type="text" id="assignedAnalyst" placeholder="Assigned Analyst">
+
+                <textarea id="notes" placeholder="Investigation Notes"></textarea>
+
+                <button onclick="createTicket()">Create Ticket</button>
+
+            </div>
+
+            <div id="ticketList"></div>
+
+        </div>
+
+        <div class="report-section">
+
+            <h2>Final Incident Report</h2>
+
+            <div class="report-box" id="reportBox">
+
+                <h3>Executive Summary</h3>
+
+                <p>
+                    No active incidents generated yet.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+    Created for Cyber Threat Monitoring Level 1 Portfolio Project - Ph4ntomAssassin
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
