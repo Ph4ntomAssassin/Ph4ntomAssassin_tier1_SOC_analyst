@@ -2740,4 +2740,3 @@ function forceEscalate(id){
   escalateTicket(t);
   renderQueue();
 }
-
